@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HeaderBlock from './components/HeaderBlock'
+import './index.css'
 
 const AppHeader = () => {
-  const margin = 40;
-  const headerStyle = {
-    color: 'red',
-    marginLeft: `${ margin }px`,
-    marginBottom: `${ margin }px`,
-  };
-
   return (
-    <h1 style={ headerStyle }>Hello world, React.js</h1>
+    <h1 className="header">Hello world, React.js</h1>
   )
 };
 
@@ -41,6 +36,7 @@ const AppList = () => {
 
 const App = () => (
   <>
+    <HeaderBlock />
     <AppHeader />
     <AppInput />
     <AppList />
