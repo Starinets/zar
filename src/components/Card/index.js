@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import s from './Card.module.scss'
 
 class Card extends React.Component {
 
-  render() {
+  handleCardClick = () => {
+    console.log('-->', this.props.rus);
+  }
 
+  render() {
     const { eng, rus } = this.props;
 
     return (
-      <div className={s.card}>
+      <div
+        className={s.card}
+        onClick={this.handleCardClick}
+      >
         <div className={s.cardInner}>
           <div className={s.cardFront}>
             {eng}
