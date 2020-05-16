@@ -63,7 +63,10 @@ const App = () => (
     </HeaderBlock>
     <div>
       {
-        wordsList.map(({ eng, rus }) => <Card eng={eng} rus={rus} />)
+        wordsList
+          .map(({ eng, rus }, index) => (
+            <Card key={index} eng={eng} rus={rus} />
+          ))
       }
     </div>
     <HeaderBlock
