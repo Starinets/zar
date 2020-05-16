@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './HeaderBlock.module.scss';
+import s from './style.module.scss';
 
 const HeaderBlock = ({ hideBackground = false, children }) => {
   const styleCover = hideBackground ? { backgroundImage: 'none' } : {};

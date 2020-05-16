@@ -1,8 +1,21 @@
 import React from 'react';
+import Head from './components/Head';
+import Logo from './components/Logo';
+import Nav from './components/Nav';
+import MenuItem from './components/MenuItem';
 import HeaderBlock from './components/HeaderBlock';
 import Header from './components/Header';
 import Paragraph from './components/Paragraph';
+import Main from './components/Main';
 import Card from './components/Card';
+import Footer from './components/Footer';
+
+const navigationMenu = [
+  { title: 'На главную' },
+  { title: 'О сервисе' },
+  { title: 'Категории слов' },
+  { title: 'Контакты' },
+];
 
 const wordsList = [
   {
@@ -53,6 +66,17 @@ const wordsList = [
 
 const App = () => (
   <>
+    <Head fixed>
+      <Logo>Учим слова</Logo>
+      <Nav>
+        {
+          navigationMenu
+            .map(({ title }, index) => (
+              <MenuItem key={index} title={title} />
+            ))
+        }
+      </Nav>
+    </Head>
     <HeaderBlock>
       <Header>
         Учите слова онлайн
@@ -61,14 +85,14 @@ const App = () => (
         Используйте карточки для запоминания и пополняйте активный словарный запас.
       </Paragraph>
     </HeaderBlock>
-    <div>
+    <Main>
       {
         wordsList
           .map(({ eng, rus }, index) => (
             <Card key={index} eng={eng} rus={rus} />
           ))
       }
-    </div>
+    </Main>
     <HeaderBlock
       hideBackground
     >
@@ -79,6 +103,17 @@ const App = () => (
         Ну здорово же.
       </Paragraph>
     </HeaderBlock>
+    <Head>
+      <Logo>Учим слова</Logo>
+      <Nav>
+        {
+          navigationMenu
+            .map(({ title }, index) => (
+              <MenuItem key={index} title={title} />
+            ))
+        }
+      </Nav>
+    </Head>
   </>
 );
 
