@@ -1,17 +1,16 @@
 import React from 'react';
 import s from './HeaderBlock.module.scss';
-import ReactLogoPng from '../../logo.png';
-import {ReactComponent as ReactLogoSvg} from '../../logo.svg';
+import { ReactComponent as ReactLogoSvg } from '../../logo.svg';
 
 
-const HeaderBlock = () => {
+const HeaderBlock = ({ title, hideBackground = false, descr = "" }) => {
+  const styleCover = hideBackground ? { backgroundImage: 'none' } : {};
   return (
-    <div className={ s.cover }>
-      <dev className={ s.wrap }>
-        <h1 className={ s.header }>Учите слова онлайн.</h1>
-        <img src={ ReactLogoPng } alt="лого react.js" />
+    <div className={s.cover} style={styleCover}>
+      <dev className={s.wrap}>
+        {title && <h1 className={s.header}>{title}</h1>}
         <ReactLogoSvg />
-        <p className={ s.descr }>Используйте карточки для запоминания и пополняйте активный словарный запас.</p>
+        {descr && <p className={s.descr}>{descr}</p>}
       </dev>
     </div>
   )
