@@ -3,16 +3,29 @@ import s from './Card.module.scss'
 
 class Card extends React.Component {
 
+  state = {
+    done: false,
+  }
+
   handleCardClick = () => {
-    console.log('-->', this.props.rus);
+    this.setState({
+      done: !this.state.done
+    })
   }
 
   render() {
     const { eng, rus } = this.props;
+    const { done } = this.state;
+
+    const cardClass = [s.card];
+
+    if (done) {
+      cardClass.push(s.done);
+    }
 
     return (
       <div
-        className={s.card}
+        className={cardClass.join(' ')}
         onClick={this.handleCardClick}
       >
         <div className={s.cardInner}>
