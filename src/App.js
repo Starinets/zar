@@ -8,7 +8,6 @@ import Header from './components/Header';
 import Paragraph from './components/Paragraph';
 import Main from './components/Main';
 import Card from './components/Card';
-import Footer from './components/Footer';
 
 const navigationMenu = [
   { title: 'На главную' },
