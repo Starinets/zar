@@ -1,119 +1,68 @@
 import React from 'react';
-import Head from './components/Head';
-import Logo from './components/Logo';
-import Nav from './components/Nav';
-import MenuItem from './components/MenuItem';
-import HeaderBlock from './components/HeaderBlock';
-import Header from './components/Header';
-import Paragraph from './components/Paragraph';
-import Main from './components/Main';
-import Card from './components/Card';
 
-const navigationMenu = [
-  { title: 'На главную' },
-  { title: 'О сервисе' },
-  { title: 'Категории слов' },
-  { title: 'Контакты' },
-];
+import PageHeader from './components/PageHeader/';
+import HeaderBlock from './components/HeaderBlock/';
+import Header from './components/Header/';
+import Paragraph from './components/Paragraph/';
+import CardBlock from './components/CardBlock/';
+import Footer from './components/Footer/';
+import Button from './components/Button/';
+import { wordsList, siteInfo, menuList, pageHeaderStyles, pageFooterStyles } from './data.js';
 
-const wordsList = [
-  {
-    eng: 'between',
-    rus: 'между'
-  },
-  {
-    eng: 'high',
-    rus: 'высокий'
-  },
-  {
-    eng: 'really',
-    rus: 'действительно'
-  },
-  {
-    eng: 'something',
-    rus: 'что-нибудь'
-  },
-  {
-    eng: 'most',
-    rus: 'большинство'
-  },
-  {
-    eng: 'anather',
-    rus: 'другой'
-  },
-  {
-    eng: 'much',
-    rus: 'много'
-  },
-  {
-    eng: 'family',
-    rus: 'семья'
-  },
-  {
-    eng: 'own',
-    rus: 'личный'
-  },
-  {
-    eng: 'out',
-    rus: 'из/вне'
-  },
-  {
-    eng: 'leave',
-    rus: 'покидать'
-  },
-];
+import backGround1 from './images/backGround1.jpg';
+import backGround2 from './images/backGround2.jpg';
 
-const App = () => (
-  <>
-    <Head fixed>
-      <Logo>Учим слова</Logo>
-      <Nav>
-        {
-          navigationMenu
-            .map(({ title }, index) => (
-              <MenuItem key={index} title={title} />
-            ))
-        }
-      </Nav>
-    </Head>
-    <HeaderBlock>
-      <Header>
-        Учите слова онлайн
-      </Header>
-      <Paragraph>
-        Используйте карточки для запоминания и пополняйте активный словарный запас.
-      </Paragraph>
-    </HeaderBlock>
-    <Main>
-      {
-        wordsList
-          .map(({ eng, rus }, index) => (
-            <Card key={index} eng={eng} rus={rus} />
-          ))
-      }
-    </Main>
-    <HeaderBlock
-      hideBackground
-    >
-      <Header>
-        Еще один заголовок
-      </Header>
-      <Paragraph>
-        Ну здорово же.
-      </Paragraph>
-    </HeaderBlock>
-    <Head>
-      <Logo>Учим слова</Logo>
-      <Nav>
-        {
-          navigationMenu
-            .map(({ title }, index) => (
-              <MenuItem key={index} title={title} />
-            ))
-        }
-      </Nav>
-    </Head>
-  </>
-);
+const App = () => {
+  return (
+    <>
+      <PageHeader siteInfo={siteInfo} menuList={menuList} styles={pageHeaderStyles} />
+      <HeaderBlock id={'learn'} bgImage={backGround1}>
+        <Header>
+          Учите английский онлайн
+        </Header>
+        <Paragraph>
+          Используйте карточки для запоминания и повторения
+        </Paragraph>
+        <Button href={'#howto'}>
+          Узнать больше
+        </Button>
+      </HeaderBlock>
+      <HeaderBlock id={'howto'} hideBackground>
+        <Header>
+          Как это работает
+        </Header>
+        <Paragraph>
+          Карточки для изучения языка - это набор наиболее частотных слов по определенной теме. Интервальный просмотр
+          карточек поможет вам увеличить словарный запас, узнать правильное произношение каждого слова, связав его с
+          определённым изображением. А ещё мы подготовили для вас расписание для изучения и повторения на каждый день.
+          Карточки включают 100500 самых употребляемых английских слов, разбитых на группы по темам.
+        </Paragraph>
+        <Paragraph>
+          Начните изучать английский прямо сейчас!
+        </Paragraph>
+        <Button href={'#train'}>
+          Вперёд!
+        </Button>
+      </HeaderBlock>
+      <CardBlock id={'train'} wordsList={wordsList} hideBackground>
+        <Button href={'#sets'}>
+          Тренировать
+        </Button>
+      </CardBlock>
+      <HeaderBlock id={'sets'} bgImage={backGround2}>
+        <Header>
+          Начни учить английский
+        </Header>
+        <Paragraph>
+          У нас ещё много карточек со словами
+        </Paragraph>
+        <Button href={'#learn'}>
+          Покажи мне
+        </Button>
+      </HeaderBlock>
+      <Footer siteInfo={siteInfo} styles={pageFooterStyles} />
+    </>
+  );
+}
 
 export default App;

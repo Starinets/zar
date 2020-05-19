@@ -1,12 +1,20 @@
 .card {
-  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  min-height: 250px;
+  min-width: 230px;
+  
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 30px;
+
   font-size: 18px;
-  line-height: 1;
   text-align: center;
-  cursor: pointer;
+
   perspective: 1000px;
-  height: 51px;
-  margin: 10px;
+  cursor: pointer;
 
   &.done {
     .cardInner {
@@ -17,43 +25,56 @@
 
 .cardInner {
   position: relative;
-  background-color: transparent;
+  
   width: 100%;
   height: 100%;
+  
+  background-color: transparent;
+  
   text-align: center;
+  
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 7px 5px -5px #010101;
 }
 
-.cardFront, 
+.cardFront,
 .cardBack {
   position: absolute;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   width: 100%;
   height: 100%;
+  
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  padding: 15px 12px;
-
-  border-radius: 5px;
-
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  background-size: 220%;
-  transition: 0.5s ease;
-
-  &:hover {
-    background-position: right;
-  }
 }
 
 .cardFront {
-  background-image: linear-gradient(45deg, #ed1e79, #662d8c, #ed1e79);
+  justify-content: flex-start;
+  
+  padding-top: 15px;
+}
+
+.cardFront {
+  background-color: white;
+  
+  color: black;
 }
 
 .cardBack {
-  background-image: linear-gradient(45deg, #63e2ff, #d585ff, #63e2ff);
+  background-color: #1BB95E;
+  
+  color: white;
+  
   transform: rotateY(180deg);
+}
+
+.img {
+  margin-bottom: 20px;
 }

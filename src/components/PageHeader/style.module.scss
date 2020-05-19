@@ -1,0 +1,91 @@
+.header {
+  position: fixed;
+  width: 100%;
+  
+  padding: 12px 0 15px;
+  
+  color: #ffffff;
+  background-color: #1a3e70;
+  
+  box-shadow: 0 1px 10px 1px rgba(0,0,0,0.3);
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: #dddddd;
+  
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 30px;
+  line-height: 1.25;
+  
+  text-decoration: none
+}
+
+.menuList {
+  display: flex;
+  align-items: center;
+  
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menuItem:not(:last-child) {
+  margin-right: 30px;
+}
+
+.menuItem a {
+  color: #dddddd;
+  
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.2s;
+
+  &:hover {
+    color: #3498db;
+    text-decoration: underline;
+  }
+}
+
+.btnLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  color: white;
+  
+  font-size: 16px;
+  text-decoration: none;
+  
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 5px 20px 7px;
+
+  &:hover {
+    background-color: rgb(41, 89, 114);
+  }
+}
+
+.email {
+  margin: 0;
+
+  a {
+    color: #9fc2c9;
+    
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}

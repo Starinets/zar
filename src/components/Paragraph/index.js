@@ -1,12 +1,8 @@
-import React from 'react'
-import s from './Paragraph.module.scss'
+import React from 'react';
+import s from './style.module.scss';
 
 const Paragraph = ({ children }) => {
-  return (
-    <p className={s.paragraph}>
-      {children}
-    </p>
-  );
+  return <p className={s.descr}>{children}</p>;
 }
 
 export default Paragraph;

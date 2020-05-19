@@ -1,15 +1,24 @@
 import React from 'react';
 import s from './style.module.scss';
 
-const HeaderBlock = ({ hideBackground = false, children }) => {
+const HeaderBlock = ({ id, hideBackground = false, bgImage, children }) => {
   const styleCover = hideBackground ? { backgroundImage: 'none' } : {};
+
+  if (bgImage) {
+    styleCover.backgroundImage = 'url(' + bgImage + ')';
+  }
+
   return (
-    <div className={s.cover} style={styleCover}>
-      <dev className={s.wrap}>
+    <section
+      id={id}
+      className={s.cover}
+      style={styleCover}
+    >
+      <div className={s.wrap}>
         {children}
-      </dev>
-    </div>
-  )
-}
+      </div>
+    </section>
+  );
+};
 
 export default HeaderBlock;

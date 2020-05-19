@@ -1,0 +1,46 @@
+.footer {
+  padding: 30px 0;
+
+  color: #ffffff;
+  background-color: #37383c;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.copyright {
+  margin: 0;
+  margin-bottom: 10px;
+
+  a {
+    text-decoration: none;
+    color: #cccccc;
+  }
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  
+  width: 200px;
+}
+
+.logo {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: 30px;
+}
+
+.email {
+  margin: 0;
+
+  a {
+    color: #cccccc;
+    text-decoration: none;
+  }
+}
